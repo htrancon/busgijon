@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+ 
+	<title>Curso JS IEEE</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      
+	  body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      span6 .padding {     
+        padding: 20px;
+        }
+	  navbar{
+		background-image: url("fondotaxi1360.jpg");
+	  }
+	  
+	  /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+        
+    .banner { 
+        position: relative; 
+        overflow: auto;
+    }
+    .banner li { list-style: none; }
+    .banner ul li { float: left; }
+        
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    
+</head>
+
+<body onload="checkCookie()">
+
+	<div class="container">
+        
+		<div class="navbar">
+			<div class="navbar-inner">
+				
+				<ul class="nav">
+				<li class="active"><a href="busgijon.html">Inicio</a></li>
+                
+                <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Color de fondo <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="javascript:void(document.getElementById('principal').style.backgroundColor='black')">Negro</a></li>
+                    <li><a href="javascript:void(document.getElementById('principal').style.backgroundColor='white')">Blanco</a></li>
+                    <li><a href="javascript:void(document.getElementById('principal').style.backgroundColor='grey')">Gris</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:void(document.body.style.backgroundColor='black')">Todo Negro</a></li>
+                    <li><a href="javascript:void(document.body.style.backgroundColor='white')">Todo Blanco</a></li>
+                    <li><a href="javascript:{
+                         var S=document.createElement('style');
+                         S.type = 'text/css';
+                         S.appendChild(document.createTextNode('h2{font-size:36px;color:blue;}
+                                                                body{color:green;font-size:20px;}'));
+                         document.body.appendChild(S);};
+                         void 0">Insertar estilo dinamicamente</a></li>  
+                  </ul>
+                </li>
+                <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dibujo<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li onclick="SetPokeball(-1)"><a>pokeball</a></li>
+                      <li onclick="SetPokeball(-2)"><a>pinkball</a></li>
+                      <li onclick="SetPokeball(-3)"><a>masterball</a></li>
+                      <li onclick="SetPokeball(0)"><a>"Normal"</a></li> 
+                  </ul>
+                </li>
+				</ul>                    
+			
+            </div>
+		</div><!-- /.navbar -->
+	</div>
+
+    <div class="container" id="global">
+        
+        <div class="hero-unit" id="principal"> 
+            <div class="row-fluid">
+            <!-- demasiado facil estatico, lo cargamos con JS 
+                <div class="span8">
+			
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23140.15978258583!2d-5.667939565902784!3d43.53320189236714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1416643615428" 
+                             width="640" height="480" frameborder="0" style="border:0"></iframe>
+		
+                </div> -->
+            
+            <div class="span1">
+            
+                <div>
+                    <label>
+                      <input type="checkbox" id="1" onclick="SetLinea(1)"> L1
+                    </label>
+                </div>
+            
+                <div>
+                    <label>
+                      <input type="checkbox"  id="2" onclick="SetLinea(2)"> L2
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                      <input type="checkbox" id="4" onclick="SetLinea(4)"> L4
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                      <input type="checkbox" id="6" onclick="SetLinea(6)"> L6
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                      <input type="checkbox" id="10" onclick="SetLinea(10)"> L10
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                      <input type="checkbox" id="12" onclick="SetLinea(12)"> L12
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                      <input type="checkbox" id="14" onclick="SetLinea(14)"> L14
+                    </label>
+                </div>
+
+                <div id="checkbox15">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(15)"> L15
+                    </label>
+                </div>
+
+                <div id="checkbox16">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(16)"> L16
+                    </label>
+                </div>
+
+                <div id="checkbox18">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(18)"> L18
+                    </label>
+                </div>
+
+                <div id="checkbox20">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(20)"> L20
+                    </label>
+                </div>
+
+                <div id="checkbox21">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(21)"> L21
+                    </label>
+                </div>
+
+                <div id="checkbox24">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(24)"> L24
+                    </label>
+                </div>
+
+                <div id="checkbox25">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(25)"> L25
+                    </label>
+                </div>
+
+                <div id="checkbox26">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(26)"> L26
+                    </label>
+                </div>
+
+                <div id="checkbox28">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(28)"> L28
+                    </label>
+                </div>
+
+                <div id="checkbox30">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(30)"> L30
+                    </label>
+                </div>
+
+                <div id="checkbox34">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(34)"> L34
+                    </label>
+                </div>
+
+                <div id="checkboxall">
+                    <label>
+                      <input type="checkbox" onclick="SetLinea(0)"> Todas
+                    </label>
+                </div>
+                
+                <br>
+                
+                <div align="left" id="pillarjson" style="display:none">
+                    <button class="btn btn-primary" onclick="llamada()">mirar</a>
+                </div>
+                <div align="left" id="cookies" style="display:none">
+                    <button class="btn btn-primary">Cookies</a>
+                </div>
+                
+            
+            </div>
+                
+            <div id="Mapa" class="span11" title="se recarga cada 6 segundos automaticamente" align="right" style="width:720px; height:480px;"></div>    
+		
+        </div>
+    </div>
+		
+	<hr>    
+	  
+</div>
+    
+    <!--MODAL LOGIN-->
+    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="exampleModalLabel">Log in</h4>
+          </div>
+          <div class="modal-body">
+            <form method="post">
+                <fieldset>
+
+                <label>Usuario</label>
+                <input class="input-xlarge" id="nombre" type="text" required placeholder="Escriba algo...">
+                <span class="help-inline"></span>
+                    
+                <label>Sexo</label>    
+                <select id="sexo">
+                    <option selected value="hombre">hombre</option>
+                    <option value="mujer">mujer</option>
+                    <option value="mucho">mucho</option>
+                </select>     
+
+                </fieldset>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button onclick="createCookie()" class="btn btn-primary" data-dismiss="modal">Crear cookie</button> 
+            </div>
+        </div>
+      </div>
+    </div>    
+    
+    <!--MODAL LOGIN-->
+    <div class="modal fade" id="modalWelcome" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="exampleModalLabel">HOLIIIIIS</h4>
+          </div>
+          <div class="modal-body" id="welcomeuser">
+
+            </div>
+        </div>
+      </div>
+    </div>        
+	
+
+    <div class="container" align="center">
+      <footer>
+        <p align="center"><small><em>© Curso JS IEEE &bull; Web desarrollada por Hugo García Trancón</em></small></p>
+      </footer>
+
+    </div> <!-- /container -->
+        
+</body>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    
+    <script src="js/geodesy/vector3d.js"></script>
+    <script src="js/geodesy/latlon-ellipsoidal.js"></script>
+    <script src="js/geodesy/utm.js"></script>
+    <script src="js/geodesy/dms.js"></script>
+
+    <script src="main.js"></script>
+
+</html>
